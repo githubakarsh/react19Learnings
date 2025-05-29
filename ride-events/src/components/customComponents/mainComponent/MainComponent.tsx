@@ -22,12 +22,15 @@ export const Maincomponent: React.FC = () => {
     return <>
     <LogoutModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
     <div style={{
-        padding: 20,
+        padding: 10,
+        paddingRight: 30,
+        paddingTop: 30,
         textAlign: 'right',
         cursor: 'pointer'
     }}>
         <label onClick={() => showModal()} style={{
-            cursor: 'pointer'
+            cursor: 'pointer',
+            textDecoration: 'underline'
         }}><LogoutOutlined /> Logout</label>
     </div>
 
