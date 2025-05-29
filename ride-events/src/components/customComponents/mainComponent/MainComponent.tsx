@@ -19,7 +19,6 @@ export const Maincomponent: React.FC = () => {
         setIsModalOpen(true);
       };
 
-
     return <>
     <LogoutModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
     <div style={{

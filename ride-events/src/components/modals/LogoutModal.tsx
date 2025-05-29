@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from 'antd';
+import { useNavigate } from 'react-router';
 
 
 interface logoutModalInterface {
@@ -11,9 +12,12 @@ export const LogoutModal: React.FC<logoutModalInterface> = ({
     setIsModalOpen,
     isModalOpen
 }) => {
+  const navigate = useNavigate();
+
   const handleOk = () => {
     // redirect to home page after clearing the token
     setIsModalOpen(false);
+navigate('/log-in');
     console.log("user logged out successfully");
   };
   const handleCancel = () => {
