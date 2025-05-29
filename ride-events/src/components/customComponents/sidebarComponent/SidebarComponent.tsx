@@ -1,12 +1,13 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Avatar, Divider } from 'antd';
 import {
   HomeOutlined,
   UnorderedListOutlined,
  BookOutlined,
   VideoCameraOutlined,
   LoginOutlined,
-  UserAddOutlined
+  UserAddOutlined,
+  UserOutlined
 } from '@ant-design/icons';
 
 
@@ -42,7 +43,6 @@ export const SidebarComponent = () => {
 
 
   const activeMenuOption = sidebarNavOptions.findIndex(data => data.path === location.pathname);
-  console.log(activeMenuOption);
     return <Sider style={siderStyle}>
     <div style={{
       display: 'block',
@@ -50,6 +50,8 @@ export const SidebarComponent = () => {
       margin: '20px 15px'
     }}><h2>Rider events</h2></div>
     <Menu theme="dark" mode="inline" defaultSelectedKeys={[activeMenuOption.toString()]} >
+      <Avatar shape="square"  size={164} icon={<UserOutlined />} style={{ background: 'white', color:'black', marginLeft: 15}}/>
+      <Divider style={{ color: 'white'}}/>
       {sidebarNavOptions.map((data, index) => {
         return <Menu.Item key={index} onClick={() => navigate(data.path)}>{data?.name}</Menu.Item>
       })}
